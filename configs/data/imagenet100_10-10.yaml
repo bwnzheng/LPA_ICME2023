@@ -1,0 +1,8 @@
+data_set: imagenet100
+initial_increment: 10
+increment: 10
+memory_size: 2000
+data_path: data/imagenet
+
+log_category: 10-10
+num_workers: 8

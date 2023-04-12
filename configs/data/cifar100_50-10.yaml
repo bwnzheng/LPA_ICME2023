@@ -1,0 +1,8 @@
+data_set: cifar100
+initial_increment: 50
+increment: 10
+memory_size: 2000
+data_path: data/cifar100
+
+log_category: 50-10
+num_workers: 2

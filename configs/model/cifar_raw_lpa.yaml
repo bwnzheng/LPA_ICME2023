@@ -1,0 +1,52 @@
+# Model definition
+model: convit_lpa
+embed_dim: 384
+depth: 6
+num_heads: 12
+patch_size: 4
+input_size: 32
+local_up_to_layer: 5
+class_attention: true
+num_lpsa: 5
+hyper_lambda: null
+
+# Training setting
+no_amp: true
+eval_every: 50
+
+# Base hyperparameter
+epochs: 600
+weight_decay: 0.000001
+batch_size: 128
+incremental_batch_size: 128
+incremental_lr: 0.0008
+rehearsal: icarl_all
+
+# Knowledge Distillation
+auto_kd: true
+
+# Finetuning
+finetuning: balanced
+finetuning_epochs: 20
+
+# Method
+method: raw
+freeze_task: ['old_heads']
+freeze_ft: ['sab', 'tab']
+
+# Independent Classifiers
+ind_clf: 1-1
+bce_loss: true
+
+
+# Advanced Augmentations, here disabled
+
+## Erasing
+reprob: 0.0
+remode: pixel
+recount: 1
+resplit: false
+
+## MixUp & CutMix
+mixup: 0.8
+cutmix: 0.0
